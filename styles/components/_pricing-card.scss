@@ -1,0 +1,120 @@
+.pricing-grid {
+  display: grid;
+  gap: 2rem;
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+
+.pricing-card {
+  background: $white;
+  border-radius: 0.625rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.08);
+
+  @include desktop {
+    padding: 2rem 1.75rem;
+  }
+
+  &--featured {
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: $white;
+    position: relative;
+    z-index: 1;
+
+    @include desktop {
+      padding: 3.5rem 1.75rem;
+      transform: scale(1.05);
+    }
+
+    .pricing-card-title {
+      color: $white;
+    }
+
+    .pricing-card-price {
+      color: $white;
+    }
+
+    .pricing-card-features {
+      color: $white;
+
+      li {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .pricing-card-btn {
+      background: $white;
+      color: $gradient-end;
+
+      &:hover {
+        background: transparent;
+        color: $white;
+        border-color: $white;
+      }
+    }
+  }
+}
+
+.pricing-card-title {
+  font-size: 1.125rem;
+  color: $gray-650;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.5rem;
+  color: $gray-700;
+  margin-bottom: 2rem;
+  gap: 0.25rem;
+}
+
+.price-symbol {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.price-value {
+  transition: opacity 0.3s;
+}
+
+.pricing-card-features {
+  margin-bottom: 2rem;
+
+  li {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9375rem;
+    color: $gray-650;
+
+    &:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.pricing-card-btn {
+  display: block;
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, $gradient-start, $gradient-end);
+  color: $white;
+  border-radius: 0.375rem;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+
+  &:hover {
+    background: transparent;
+    color: $gradient-end;
+    border-color: $gradient-end;
+  }
+}
